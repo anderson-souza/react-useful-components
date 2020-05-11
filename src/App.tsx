@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import GridContainer from './Components/GridContainer';
+import GridItem from './Components/GridItem';
 
 function App() {
   return (
@@ -10,6 +12,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -19,6 +22,30 @@ function App() {
           Learn React
         </a>
       </header>
+      <GridContainer columns={4} columnGap={20}>
+        <GridItem tamanhoColunas={2}>
+          <p>Viado</p>
+          <GridContainer columns={2}>
+            <p>Teu pai aquele corno</p>
+            <p>Teu pai aquele corno</p>
+            <p>Teu pai aquele corno</p>
+          </GridContainer>
+        </GridItem>
+
+        <p>Viado</p>
+        <p>Viado</p>
+        <p>Viado</p>
+        <p>Viado</p>
+        <p>Viado</p>
+        <p>Viado</p>
+        <p>Viado</p>
+        <p>Viado</p>
+        <p>Viado</p>
+        <p>Viado</p>
+        <p>Viado</p>
+        <p>Viado</p>
+        <p>Viado</p>
+      </GridContainer>
     </div>
   );
 }
