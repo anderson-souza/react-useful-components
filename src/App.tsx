@@ -23,7 +23,7 @@ function App() {
         </a>
       </header>
       <GridContainer columns={4} columnGap={20}>
-        <GridItem tamanhoColunas={2}>
+        <GridItem columnSize={2}>
           <p>Viado</p>
           <GridContainer columns={2}>
             <p>Teu pai aquele corno</p>

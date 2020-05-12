@@ -1,24 +1,34 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 
 interface IGridItemProps {
-  tamanhoColunas?: number;
-  tamanhoLinhas?: number;
+  columnSize?: number;
+  rowSize?: number;
   children: React.ReactElement | React.ReactElement[];
 }
 
 const GridItem: React.FunctionComponent<IGridItemProps> = ({
-  tamanhoColunas = 1,
-  tamanhoLinhas = 1,
+  columnSize,
+  rowSize,
   children,
-}) => (
-  <div
-    style={{
-      gridColumn: `span ${tamanhoColunas}`,
-      gridRow: `span ${tamanhoLinhas}`,
-    }}
-  >
-    {children}
-  </div>
-);
+}) => {
+  const componentStyle: React.CSSProperties = {
+    gridColumn: `span ${columnSize}`,
+    gridRow: `span ${rowSize}`,
+  };
+
+  return <div style={componentStyle}>{children}</div>;
+};
+
+GridItem.defaultProps = {
+  columnSize: 1,
+  rowSize: 1,
+};
+
+GridItem.propTypes = {
+  columnSize: PropTypes.number,
+  rowSize: PropTypes.number,
+  children: PropTypes.element.isRequired,
+};
 
 export default GridItem;

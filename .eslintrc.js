@@ -6,6 +6,9 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
   ],
   globals: {
@@ -22,9 +25,11 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
+    'prettier/prettier': 'error',
     'react/jsx-filename-extension': [
-      1,
-      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+      'warn',
+      { extensions: ['.jsx', '.js', '.tsx', '.ts'] },
     ],
+    'import/prefer-default-export': 'off',
   },
 };
